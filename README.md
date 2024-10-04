@@ -9,14 +9,34 @@ once this is done you need to build the image use the following command
 
 bash
 ```
-docker build -t flask .
+docker build -t kouti/flask .
 ```
 where ```flask``` is the name of the flask app.
+since we did not append a tag the lastest tag was added autoatically.
+
 
 then run the following command
 
 bash
 ```
-docker run -p 5000:5000 flask
+docker run -p 5000:5000 kouti/flask
 ```
-## Step 2 
+
+then push the file docker to docker hub using 
+
+bash
+```
+docker push kouti/flask
+``` 
+## Step 2 Adding it to a Kubernetics cluster
+
+here we have 2 files services and deployments.
+
+once this is done we would run the following commands 
+
+bash
+```
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+
