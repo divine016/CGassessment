@@ -1,8 +1,10 @@
 
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: my-api-deployment
+  namespace: kouti-flask-app-namespace
 spec:
   replicas: 1
   selector:
@@ -15,6 +17,6 @@ spec:
     spec:
       containers:
       - name: my-api-container
-        image: kouti/flask:latest  # Replace with my Docker image name
+        image: kouti/flask:latest  
         ports:
         - containerPort: 5000 

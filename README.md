@@ -40,3 +40,19 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
+once that is done run the following comand to get an external ip adress.
+
+bash
+```
+kubectl get pods -n kouti-flask-app-namespace #this is to see if the service is running
+kubectl get services -n kouti-flask-app-namespace #this is to get the services that are under the namespace
+kubectl get svc  my-api-service #to get an external ip
+```
+
+## step 3 creating the CI/CD pipeline
+
+## step 4 some security measure implemented
+* using Github environment varibales to configure Dockerhub secrets
+* deploying the app in a different namespace for isolation
+* using uoto date dependencies
+* usinf security headers like Flask Talisman
