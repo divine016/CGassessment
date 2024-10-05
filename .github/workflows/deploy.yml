@@ -36,7 +36,7 @@ jobs:
         run: docker build -t kouti/flask:latest .
 
       - name: Push to Docker Hub
-        run: docker push kouti/simple-webapp-flask:latest
+        run: docker push kouti/flask:latest
 
       - name: Deploy to Kubernetes
         uses: azure/k8s-deploy@v1

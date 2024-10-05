@@ -1,6 +1,8 @@
 # CGassessment
 In this project, we deploy the flask app to a Kubernetes cluster, implement basic security practices, and set up a CI/CD pipeline to automate testing, building, and deploying the application.
 
+#### Author: Kouti Divine (Cybergirl 4.0)
+
 ## Step 1 Build and run the docker image
 
 check the Dockerfile for more information on how to configure your docker file such that it can run the flask app
@@ -37,6 +39,7 @@ once this is done we would run the following commands
 bash
 ```
 kubectl apply -f deployment.yaml
+
 kubectl apply -f service.yaml
 ```
 
@@ -45,7 +48,9 @@ once that is done run the following comand to get an external ip adress.
 bash
 ```
 kubectl get pods -n kouti-flask-app-namespace #this is to see if the service is running
+
 kubectl get services -n kouti-flask-app-namespace #this is to get the services that are under the namespace
+
 kubectl get svc  my-api-service #to get an external ip
 ```
 
@@ -56,3 +61,5 @@ create a .github/workflows/deploy.yml. once this is done enter your code and the
 * deploying the app in a different namespace for isolation
 * using uoto date dependencies
 * usinf security headers like Flask Talisman
+
+Well had some troubles at the beginning with kubernets because i tried installing kubectl on its own. then a fellow sister explained that once i had KinD installed there was no need installing kubectl again so this was cool and fun. I was able to containerise a simple web app and also deploy it to kubernets and also create a CI/CD pipeline to automate the whole process.
