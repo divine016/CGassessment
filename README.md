@@ -50,7 +50,7 @@ kubectl get svc  my-api-service #to get an external ip
 ```
 
 ## step 3 creating the CI/CD pipeline
-
+create a .github/workflows/deploy.yml. once this is done enter your code and then push to github..
 ## step 4 some security measure implemented
 * using Github environment varibales to configure Dockerhub secrets
 * deploying the app in a different namespace for isolation
