@@ -37,11 +37,17 @@ jobs:
 
       - name: Push to Docker Hub
         run: docker push kouti/flask:latest
+        
+    # Set up the Kubernetes context with kubeconfig
+      - name: Set Kubernetes context
+        uses: azure/k8s-set-context@v1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG }}
 
       - name: Deploy to Kubernetes
         uses: azure/k8s-deploy@v1
         with:
-          action: deploy
           namespace: kouti-flask-app-namespace
           manifests: |
             ./deployment.yaml
