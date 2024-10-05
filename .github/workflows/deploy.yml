@@ -59,7 +59,7 @@ jobs:
   
       - name: Load Docker image into kind
         run: |
-          kind load docker-image ${{ secrets.DOCKER_USERNAME }}/flask:$latest --name kouti-flask-cluster
+          kind load docker-image ${{ secrets.DOCKER_USERNAME }}/flask:latest --name kouti-flask-cluster
 
       - name: Deploy to Kubernetes
         run: |
