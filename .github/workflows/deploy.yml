@@ -60,10 +60,10 @@ jobs:
 
       - name: Verify Deployment
         run: |
-          kubectl get pods --namespace my-flask-app-namespace
-          kubectl get services --namespace my-flask-app-namespace
+          kubectl get pods --namespace kouti-flask-app-namespace
+          kubectl get services --namespace kouti-flask-app-namespace
 
       - name: Delete kind cluster
         if: success()
         run: |
-          kind delete cluster --name flask-app-cluster
+          kind delete cluster --name kouti-flask-cluster
